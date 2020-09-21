@@ -19,7 +19,7 @@ page.open(url, function (status) {
     console.log("Status: " + status);
     if (status === "success") {
         setTimeout(function () {
-            var path = 'results';
+            var path = 'results.xml";
             var output = page.evaluate(function () {
                 console.log("in evaluate");
                 console.log(document.output);
