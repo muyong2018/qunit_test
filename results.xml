@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="file:///Users/yongmu/tmp/js_ut/qunit_test/test.html" tests="5" failures="0" errors="0" time="0.007">
+<testsuite id="0" name="" hostname="localhost" tests="5" failures="0" errors="0" time="0.003" timestamp="2020-09-21T19:46:02Z">
+<testcase name="isEven()" time="0.002" timestamp="2020-09-21T19:46:02Z">
+</testcase>
+</testsuite>
+</testsuites>

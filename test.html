@@ -4,6 +4,30 @@
     <title>QUnit Test Suite</title>  
     <link rel="stylesheet" href="qunit.css" />
     <script src="qunit.js"></script>
+    <script src="qunit-reporter-junit.js"></script>
+    <script>
+      // Let's test this function
+      function isEven(val) {
+        return val % 2 === 0;
+      }
+
+      console.log("call jUnitDone");
+      QUnit.jUnitDone(function(report) {
+        console.log("in junitdone");
+        if (typeof console !== 'undefined') {
+          console.log(report.xml);
+          document.output = report.xml;
+        }
+      });
+
+      QUnit.test('isEven()', function(assert) {
+        assert.ok(isEven(0), 'Zero is an even number');
+        assert.ok(isEven(2), 'So is two');
+        assert.ok(isEven(-4), 'So is negative four');
+        assert.ok(!isEven(1), 'One is not an even number');
+        assert.ok(!isEven(-7), 'Neither is negative seven');
+      })
+    </script>
     <!-- Your project file goes here -->  
     <!-- <script type="text/javascript" src="myProject.js"></script>   -->
     <!-- Your tests file goes here -->  
@@ -14,21 +38,6 @@
     <h2 id="qunit-banner"></h2>  
     <div id="qunit-testrunner-toolbar"></div>  
     <h2 id="qunit-userAgent"></h2>  
-    <ol id="qunit-tests"></ol>  
-
-    <script>
-      // Let's test this function  
-      function isEven(val) {  
-        return val % 2 === 0;  
-      }  
-
-      test('isEven()', function() { 
-        ok(isEven(0), 'Zero is an even number'); 
-        ok(isEven(2), 'So is two'); 
-        ok(isEven(-4), 'So is negative four'); 
-        ok(!isEven(1), 'One is not an even number'); 
-        ok(!isEven(-7), 'Neither is negative seven');  
-      })  
-    </script>
+    <ol id="qunit-tests"></ol>
 </body>  
 </html>  
